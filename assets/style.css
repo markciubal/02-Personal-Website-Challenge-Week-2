@@ -9,6 +9,7 @@
 html {
     background: #111;
     color: white;
+    scroll-behavior: smooth;
 }
 
 * {
@@ -83,7 +84,7 @@ main {
 }
 
 card {
-    margin: 10%;
+    margin: 5%;
     border: 1px solid white;
     border-radius: var(--default-border-radius);
     width: 500px;
@@ -205,6 +206,10 @@ footer img {
     padding: 5%;
     padding-top: 20%;
 
+}
+
+.highlight-card {
+    width: 90%;
 }
 
 @media screen and (max-width: 992px) {
