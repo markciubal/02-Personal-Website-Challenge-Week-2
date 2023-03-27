@@ -130,7 +130,13 @@ card:hover {
 }
 
 #photography {
-    background-image: url('../assets/images/pain.jpg');
+    background-image: url('../assets/images/photography.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#art {
+    background-image: url('../assets/images/art.gif');
     background-size: cover;
     background-repeat: no-repeat;
 }
