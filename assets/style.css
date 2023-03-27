@@ -156,13 +156,15 @@ footer {
     text-align: center;
     text-transform: uppercase;
     color: white;
-    padding: 10%;
+    padding;
+
 }
 
 
 footer section {
     width: 500px;
     font-size: large;
+    padding: 5%;
 }
 
 footer h1 {
@@ -173,6 +175,10 @@ footer h1 {
 footer p {
     margin: 2%;
     color: black;
+}
+
+img {
+    width: 100px;
 }
 
 @media screen and (max-width: 992px) {
