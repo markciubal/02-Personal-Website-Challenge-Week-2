@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@100&display=swap');
 
 :root {
-    --default-border-radius: 5px;
+    --default-border-radius: 3px;
     /* Adapted from From : https://stackoverflow.com/questions/69527946/how-can-i-make-filter-drop-shadow-a-rainbow-gradient */
     --rainbow-border: drop-shadow(0 1px 1px #FF0000) drop-shadow(0 1px 1px #FF7F00) drop-shadow(0 1px 1px #FFFF00) drop-shadow(0 1px 1px #00FF00) drop-shadow(0 1px 1px #0000FF) drop-shadow(0 1px 1px #2E2B5F) drop-shadow(0 0 1px #8B00FF);
 }
@@ -31,6 +31,8 @@ header h1 {
 
 h2 {
     font-size: 1.5em;
+    text-transform: uppercase;
+
 }
 
 a {
@@ -84,8 +86,9 @@ main {
 }
 
 card {
-    margin: 5%;
-    border: 1px solid white;
+    transition: all .75s;
+    margin: 2%;
+    /* border: 1px solid white; */
     border-radius: var(--default-border-radius);
     width: 500px;
     line-height: 175%;
@@ -101,9 +104,9 @@ card h2 {
     text-align: center;
 
     border-radius: var(--default-border-radius);
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding: 2%;
-    background-color: rgba(10, 10, 10, .5);
+    /* background-color: rgba(10, 10, 10, .5); */
 }
 
 card p {
@@ -115,8 +118,6 @@ card p {
 
 card ul {
     text-indent: 4%;
-    margin: 2%;
-    padding: 2%;
 }
 
 card ul li {
@@ -138,7 +139,7 @@ card ul li ul li::before {
 }
 
 card:hover {
-    transition: all 1.5s;
+    transition: all .75s;
     align-items: center;
     justify-content: center;
     text-shadow: 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000,
@@ -177,7 +178,7 @@ footer {
 footer section {
     width: 500px;
     font-size: large;
-    padding: 10%;
+    padding: 5%;
 }
 
 footer h1 {
@@ -202,11 +203,13 @@ footer p {
 }
 
 footer img {
-    width: 100px;
-    padding: 5%;
-    padding-top: 20%;
+    width: 128px;
+    padding: 0;
+    margin: auto;
+    text-align: center;
 
 }
+
 
 .highlight-card {
     width: 90%;
