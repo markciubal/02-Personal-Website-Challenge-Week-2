@@ -2,7 +2,7 @@
 
 :root {
     --default-border-radius: 3px;
-    /* Adapted from From : https://stackoverflow.com/questions/69527946/how-can-i-make-filter-drop-shadow-a-rainbow-gradient */
+    /* Adapted from: https://stackoverflow.com/questions/69527946/how-can-i-make-filter-drop-shadow-a-rainbow-gradient */
     --rainbow-border: drop-shadow(0 0px 1px #FF0000) drop-shadow(0 0px 1px #FF7F00) drop-shadow(0 0px 1px #FFFF00) drop-shadow(0 0px 1px #00FF00) drop-shadow(0 0px 1px #0000FF) drop-shadow(0 0px 1px #2E2B5F) drop-shadow(0 0 1px #8B00FF);
     --black-shadow: 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000,
         0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000;
@@ -90,7 +90,7 @@ card {
     margin: .5em;
     /* border: 1px solid white; */
     border-radius: var(--default-border-radius);
-    width: 500px;
+    width: 35%;
     line-height: 175%;
     padding: .5em;
 }
@@ -178,7 +178,7 @@ footer {
 
 
 footer section {
-    width: 500px;
+    width: 35%;
     font-size: large;
     padding: 5%;
 }
@@ -220,25 +220,25 @@ footer a {
 }
 
 .highlight-card {
-    width: 90%;
+    width: 70%;
 }
 
 @media screen and (max-width: 992px) {
     card {
-        width: 40%;
+        width: 35%;
     }
 
     footer section {
-        width: 40%;
+        width: 35%;
     }
 }
 
 @media screen and (max-width: 768px) {
     card {
-        width: 90%;
+        width: 70%;
     }
 
     footer section {
-        width: 90%;
+        width: 70%;
     }
 }
