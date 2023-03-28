@@ -3,7 +3,9 @@
 :root {
     --default-border-radius: 3px;
     /* Adapted from From : https://stackoverflow.com/questions/69527946/how-can-i-make-filter-drop-shadow-a-rainbow-gradient */
-    --rainbow-border: drop-shadow(0 1px 1px #FF0000) drop-shadow(0 1px 1px #FF7F00) drop-shadow(0 1px 1px #FFFF00) drop-shadow(0 1px 1px #00FF00) drop-shadow(0 1px 1px #0000FF) drop-shadow(0 1px 1px #2E2B5F) drop-shadow(0 0 1px #8B00FF);
+    --rainbow-border: drop-shadow(0 0px 1px #FF0000) drop-shadow(0 0px 1px #FF7F00) drop-shadow(0 0px 1px #FFFF00) drop-shadow(0 0px 1px #00FF00) drop-shadow(0 0px 1px #0000FF) drop-shadow(0 0px 1px #2E2B5F) drop-shadow(0 0 1px #8B00FF);
+    --black-shadow: 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000,
+        0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000;
 }
 
 html {
@@ -13,7 +15,7 @@ html {
 }
 
 * {
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Roboto', monospace;
 }
 
 header h1 {
@@ -22,8 +24,7 @@ header h1 {
     text-align: center;
     text-transform: uppercase;
     color: white;
-    text-shadow: 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000,
-        0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000;
+    text-shadow: var(--black-shadow);
     text-decoration: none;
     filter: var(--rainbow-border);
 
@@ -46,15 +47,14 @@ header ul {
 }
 
 header li {
-    margin: 1em 1em;
+    margin: .5em .5em;
     text-transform: uppercase;
 }
 
 .hero header ul li a {
     font-weight: 900;
     color: white;
-    text-shadow: 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000,
-        0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000;
+    text-shadow: var(--black-shadow);
     text-decoration: none;
     filter: var(--rainbow-border);
 
@@ -87,12 +87,12 @@ main {
 
 card {
     transition: all .75s;
-    margin: 2%;
+    margin: .5em;
     /* border: 1px solid white; */
     border-radius: var(--default-border-radius);
     width: 500px;
     line-height: 175%;
-    padding: 2%;
+    padding: .5em;
 }
 
 card a::before {
@@ -105,13 +105,14 @@ card h2 {
 
     border-radius: var(--default-border-radius);
     /* border: 1px solid black; */
-    padding: 2%;
+    padding: .5em;
     /* background-color: rgba(10, 10, 10, .5); */
 }
 
 card p {
     background-color: rgba(10, 10, 10, .5);
-    padding: 2%;
+    padding: .5em;
+    margin-bottom: 5%;
     border-radius: var(--default-border-radius);
 
 }
@@ -122,8 +123,8 @@ card ul {
 
 card ul li {
     text-indent: 4%;
-    margin: 2%;
-    padding: 2%;
+    margin: .5em;
+    padding: .5em;
 }
 
 card ul li ul {
@@ -132,6 +133,8 @@ card ul li ul {
 
 card ul li::before {
     content: "+ ";
+    z-index: 1;
+
 }
 
 card ul li ul li::before {
@@ -142,8 +145,7 @@ card:hover {
     transition: all .75s;
     align-items: center;
     justify-content: center;
-    text-shadow: 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000,
-        0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000;
+    text-shadow: var(--black-shadow);
     text-decoration: none;
     filter: var(--rainbow-border);
 }
@@ -151,7 +153,7 @@ card:hover {
 card a {
     filter: drop-shadow(1px 1px #000) drop-shadow(-1px 1px #000) drop-shadow(1px -1px 1px #000) drop-shadow(-1px -1px 1px #000);
     color: white;
-    font-weight: 900;
+    font-weight: 700;
 }
 
 card a:hover {
@@ -185,20 +187,19 @@ footer h1 {
     font-size: 2em;
     margin: 10%;
     color: white;
-    text-shadow: 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000, 0 0 25px #000,
-        0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000;
+    text-shadow: var(--black-shadow);
     text-decoration: none;
     filter: var(--rainbow-border);
 
 }
 
 footer h2 {
-    padding: 2%;
+    padding: .5em;
     padding-top: 20%;
 }
 
 footer p {
-    margin: 2%;
+    margin: .5em;
     color: black;
 }
 
@@ -210,6 +211,13 @@ footer img {
 
 }
 
+footer a {
+    color: black;
+}
+
+#email {
+    width: 32px;
+}
 
 .highlight-card {
     width: 90%;
