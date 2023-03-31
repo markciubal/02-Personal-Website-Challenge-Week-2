@@ -1,11 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
 
+/* Setting up some variables so I don't need to keep changing rainbow widths, or colors. More adaptable for later. */
 :root {
-    --default-border-radius: 3px;
-    /* Adapted from: https://stackoverflow.com/questions/69527946/how-can-i-make-filter-drop-shadow-a-rainbow-gradient */
+    --default-border-radius: 10px;
+    /* Adapted rainbow halo from: https://stackoverflow.com/questions/69527946/how-can-i-make-filter-drop-shadow-a-rainbow-gradient */
     --rainbow-border: drop-shadow(0 0px 1px #FF0000) drop-shadow(0 0px 1px #FF7F00) drop-shadow(0 0px 1px #FFFF00) drop-shadow(0 0px 1px #00FF00) drop-shadow(0 0px 1px #0000FF) drop-shadow(0 0px 1px #2E2B5F) drop-shadow(0 0 1px #8B00FF);
     --black-shadow: 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000, 0 0 .5em #000,
+        0 0 2em #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000;
+    --black-shadow-big: 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000,
         0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000;
+    --rainbow-border-big-line-width: .025em;
+    --rainbow-border-big: drop-shadow(0 0px var(--rainbow-border-big-line-width) #FF0000) drop-shadow(0 0px var(--rainbow-border-big-line-width) #FF7F00) drop-shadow(0 0px var(--rainbow-border-big-line-width) #FFFF00) drop-shadow(0 0px var(--rainbow-border-big-line-width) #00FF00) drop-shadow(0 0px var(--rainbow-border-big-line-width) #0000FF) drop-shadow(0 0px var(--rainbow-border-big-line-width) #2E2B5F) drop-shadow(0 0 var(--rainbow-border-big-line-width) #8B00FF);
 }
 
 html {
@@ -15,20 +20,39 @@ html {
 }
 
 * {
-    font-family: 'Roboto', monospace;
+    font-family: sans-serif;
 }
 
-header h1 {
+/* Fade in from: https://blog.hubspot.com/website/css-fade-in?hubs_content=blog.hubspot.com%2Fwebsite%2Fcss-fade-in&hubs_content-cta=Fade-in%20Text%20Transition */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {}
+}
+
+h1 {
     margin-top: 20%;
-    font-size: 5em;
+    font-size: 4em;
     text-align: center;
     text-transform: uppercase;
     color: white;
-    text-shadow: var(--black-shadow);
+    text-shadow: var(--black-shadow-big);
     text-decoration: none;
-    filter: var(--rainbow-border);
-
+    filter: var(--rainbow-border-big);
+    animation: fadeIn 1s;
+    z-index: 1;
 }
+
 
 h2 {
     font-size: 1.5em;
@@ -41,23 +65,24 @@ a {
 }
 
 header ul {
-    margin: 1%;
+    margin: 2%;
     display: flex;
     justify-content: center;
 }
 
 header li {
-    margin: .5em .5em;
+    margin: 5%;
     text-transform: uppercase;
 }
 
 .hero header ul li a {
     font-weight: 900;
     color: white;
-    text-shadow: var(--black-shadow);
+    text-shadow: var(--black-shadow-big);
     text-decoration: none;
-    filter: var(--rainbow-border);
-
+    filter: var(--rainbow-border-big);
+    z-index: -1;
+    animation: fadeIn 1s;
 }
 
 main {
@@ -85,7 +110,14 @@ main {
     color: black;
 }
 
+img {
+    max-width: 100%;
+}
+
 card {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
     transition: all .75s;
     margin: .5em;
     /* border: 1px solid white; */
@@ -110,26 +142,22 @@ card h2 {
 }
 
 card p {
-    background-color: rgba(10, 10, 10, .5);
     padding: .5em;
-    margin-bottom: 5%;
-    border-radius: var(--default-border-radius);
-
+    margin: 15%;
+    text-shadow: var(--black-shadow);
+    text-decoration: none;
 }
 
 card ul {
-    text-indent: 4%;
+    text-align: center;
 }
 
 card ul li {
-    text-indent: 4%;
     margin: .5em;
     padding: .5em;
 }
 
-card ul li ul {
-    text-indent: 8%;
-}
+card ul li ul {}
 
 card ul li::before {
     content: "+ ";
@@ -141,7 +169,15 @@ card ul li ul li::before {
     content: "+ ";
 }
 
+card img {
+    margin: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: var(--default-border-radius);
+}
+
 card:hover {
+    margin: 2%;
     transition: all .75s;
     align-items: center;
     justify-content: center;
@@ -154,12 +190,6 @@ card a {
     filter: drop-shadow(1px 1px #000) drop-shadow(-1px 1px #000) drop-shadow(1px -1px 1px #000) drop-shadow(-1px -1px 1px #000);
     color: white;
     font-weight: 700;
-}
-
-card a:hover {
-    filter: drop-shadow(2px 2px 1px #000) drop-shadow(-1px 1px #000) drop-shadow(1px -1px 1px #000) drop-shadow(-1px -1px 1px #000);
-    color: white;
-    font-weight: 900;
 }
 
 footer {
@@ -184,13 +214,12 @@ footer section {
 }
 
 footer h1 {
-    font-size: 2em;
-    margin: 10%;
+    font-size: 3em;
+    margin: 15%;
     color: white;
-    text-shadow: var(--black-shadow);
+    text-shadow: var(--black-shadow-big);
     text-decoration: none;
-    filter: var(--rainbow-border);
-
+    filter: var(--rainbow-border-big);
 }
 
 footer h2 {
@@ -223,10 +252,15 @@ footer a {
     width: 70%;
 }
 
+.highlight-card img {
+    max-width: 100%;
+}
+
 @media screen and (max-width: 992px) {
     card {
         width: 35%;
     }
+
 
     footer section {
         width: 35%;
